@@ -9,38 +9,43 @@
 </head>
 
 <body>
+   <style>
+      .list-style-none {
+        list-style: none;
+      }
+    </style>
   <div class="formulaire_contact"><h3 >Répertoire de contact</h3></div>
   <div class="formulaireetstockage">
     <form action="">
       <h4 >Formulaire de contact</h4> 
       <div class="myprenom marge">
         <label for="prenom">Prénom</label>
-         <input type="text" id="prenom" class="taille">
+         <input type="text" id="prenom" class="taille" autofocus required>
        </div>
        <div class="mynom marge ">
           <label for="nom">Nom</label>
-           <input type="text" id="nom" class="taille">
+           <input type="text" id="nom" class="taille" required>
         </div>
        <div class="mygroupe marge">
           <label for="groupe">Groupe</label>
-          <input type="text" id="groupe" class="taille">
+          <select name="" id="groupe" class="taille" required>
+             <option value=""></option>
+             <option value="famille">Famille</option>
+             <option value="amis">Amis</option>
+          </select>
         </div>
         <div class="mybio marge">
           <label for="bio">Bio</label>
-          <input type="text" id="bio" class=" taillebio">
+          <!-- <input type="text" id="bio" class=" taillebio"> -->
+          <textarea name="bio" id="bio" cols="30" rows="5" class=" taillebio private" required></textarea>
        </div>
       <div class="choisir_fichier marge ">
-          <input type="file" id="choisirfichier" value="choisir fichier" 
-         class="taillebutton1">
+         <div>
+         <label for="image_input" class="taillebutton1">choisir un fichier</label>
+          <input type="file" id="image_input" name="image"  onchange="loadFile(event)" 
+          class="taillebutton1 visible" accept="image/*" > </div>
+          <img src="" id="output" >
       </div>
-      <!-- <div class="dernierbtn">
-          <div class="btn_creer  ">
-             <input type="submit" id="creer" value="Creér" class="taillebutton">
-           </div>
-         <div class="btn_effacer  ">
-            <input type="button" id="effacer" value="Réinit." class="taillebutton">
-         </div>
-      </div> -->
        <div id="last_buttons">
             <div class="create">
                 <input type="submit" id="creer" value="Créer" 
@@ -55,6 +60,11 @@
     <div class="stockage_contact">
     
        <h4 >Liste des contacts</h4> 
+         
+       <div id="big_contenaire"> </div>
+       
+       
+     
 
     </div>
  </div>
