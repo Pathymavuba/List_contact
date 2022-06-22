@@ -6,10 +6,8 @@ image = document.getElementById('output');
 image.src = URL.createObjectURL(event.target.files[0]);
 image.style.display= "block"
 link = URL.createObjectURL(event.target.files[0]);
-
 };
 const form = document.querySelector("form");
-
 form.addEventListener("submit", function (event){
     event.preventDefault()
         let prenom = document.querySelector("#prenom").value;
